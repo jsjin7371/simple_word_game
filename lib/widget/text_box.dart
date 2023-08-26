@@ -1,14 +1,38 @@
 import 'package:flutter/material.dart';
 
 class TextBox extends StatelessWidget {
+  final List<String> text;
+
   const TextBox({
-    super.key,
-  });
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        for (String letter in text)
+          Tile(
+            word: letter,
+          ),
+      ],
+    );
+  }
+}
+
+class Tile extends StatelessWidget {
+  final String word;
+
+  const Tile({
+    Key? key,
+    required this.word,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2.0),
       child: Container(
         width: 50,
         height: 60,
@@ -17,7 +41,12 @@ class TextBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           border: Border.all(width: 2, color: Colors.grey),
         ),
-        child: const Text('test1'),
+        child: Center(
+          child: Text(
+            word,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w200),
+          ),
+        ),
       ),
     );
   }
