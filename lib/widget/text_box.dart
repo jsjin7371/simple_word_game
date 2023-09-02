@@ -11,6 +11,7 @@ class TextBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         for (String letter in text)
           Tile(
@@ -44,7 +45,7 @@ class Tile extends StatelessWidget {
         child: Center(
           child: Text(
             word,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w200),
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
       ),

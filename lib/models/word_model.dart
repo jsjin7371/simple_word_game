@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kkodeul/function/seperate_into_letters.dart';
 
 class WordModel extends ChangeNotifier {
   //list of word
   final List _words = [
-    //['단어','초성','중성','종성','초성','중성','종성',]
-    ['국장', 'ㄱ', 'ㅜ', 'ㄱ', 'ㅈ', 'ㅏ', 'ㅇ'],
-    ['풀잎', 'ㅍ', 'ㅜ', 'ㄹ', 'ㅇ', 'ㅣ', 'ㅍ'],
-    ['실행', 'ㅅ', 'ㅣ', 'ㄹ', 'ㅎ', 'ㅐ', 'ㅇ'],
+    ['q', 'u', 'e', 's', 't'], //quest
+    ['f', 'l', 'a', 'r', 'e'], //flare
+    ['p', 'i', 'x', 'e', 'l'], //pixel
+    ['m', 'a', 'n', 'g', 'o'], //mango
   ];
 
   //adding word
@@ -17,7 +16,7 @@ class WordModel extends ChangeNotifier {
   get addingword => _addingword;
 
   //add word to wordlist
-  void addWord() {
+  /*void addWord() {
     if (!_words.contains(_addingword)) {
       //separate word
       List tmp = [];
@@ -32,4 +31,5 @@ class WordModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+  */
 }

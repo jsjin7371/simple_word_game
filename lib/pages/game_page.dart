@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kkodeul/components/my_text_field.dart';
-import 'package:kkodeul/function/seperate_into_letters.dart';
 import 'package:kkodeul/widget/text_box.dart';
 
 class GamePage extends StatefulWidget {
@@ -12,16 +11,22 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
+  String? enteredText; // 입력된 텍스트를 저장할 변수
 
   void sendText() {
     if (_textController.text.isNotEmpty) {
-      _textController.clear();
+      // 입력된 텍스트를 저장
+      setState(() {
+        enteredText = _textController.text;
+      });
     }
+    _textController.clear();
   }
 
   @override
   void dispose() {
     super.dispose();
+    _textController.dispose();
   }
 
   @override
@@ -33,8 +38,12 @@ class _GamePageState extends State<GamePage> {
             child: SizedBox(
               child: Container(
                 color: Colors.green[100],
-                child: const Row(
-                  children: [],
+                child: Center(
+                  child: TextBox(
+                    text: enteredText == null
+                        ? [' ', ' ', ' ', ' ', ' ']
+                        : enteredText!.split(''),
+                  ),
                 ),
               ),
             ),
