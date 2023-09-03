@@ -12,12 +12,14 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
   String? enteredText; // 입력된 텍스트를 저장할 변수
+  bool is5letters = false;
 
   void sendText() {
     if (_textController.text.isNotEmpty) {
       // 입력된 텍스트를 저장
       setState(() {
         enteredText = _textController.text;
+        is5letters = enteredText != null && enteredText?.length == 5;
       });
     }
     _textController.clear();
@@ -40,9 +42,9 @@ class _GamePageState extends State<GamePage> {
                 color: Colors.green[100],
                 child: Center(
                   child: TextBox(
-                    text: enteredText == null
-                        ? [' ', ' ', ' ', ' ', ' ']
-                        : enteredText!.split(''),
+                    text: is5letters
+                        ? enteredText!.split('')
+                        : ['', '', '', '', ''],
                   ),
                 ),
               ),
