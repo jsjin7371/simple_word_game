@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class TextBox extends StatelessWidget {
   final List<String> text;
   final List<dynamic> answer;
-  final bool is5letters;
 
+  // 글자의 위치에 따라 색깔을 정하는 함수
   List<Color> checkWord(List<String> text, List<dynamic> answer) {
     List<Color> arr = List<Color>.filled(5, Colors.grey.shade300);
 
@@ -28,7 +28,6 @@ class TextBox extends StatelessWidget {
   const TextBox({
     Key? key,
     required this.text,
-    required this.is5letters,
     required this.answer,
   }) : super(key: key);
 
@@ -44,7 +43,6 @@ class TextBox extends StatelessWidget {
             word: text[i],
             answer: answer[i],
             hintColor: hintInfo[i],
-            is5letters: is5letters,
           ),
       ],
     );
@@ -54,13 +52,11 @@ class TextBox extends StatelessWidget {
 class Tile extends StatelessWidget {
   final String word;
   final String answer;
-  final bool is5letters;
   final Color hintColor;
 
   const Tile({
     Key? key,
     required this.word,
-    required this.is5letters,
     required this.answer,
     required this.hintColor,
   }) : super(key: key);
@@ -70,8 +66,8 @@ class Tile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: Container(
-        width: 50,
-        height: 60,
+        width: 60,
+        height: 65,
         decoration: BoxDecoration(
           color: hintColor,
           borderRadius: BorderRadius.circular(12),

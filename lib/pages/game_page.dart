@@ -14,15 +14,21 @@ class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
   WordModel wordModel = WordModel();
   List<dynamic> answerText = []; // 정답을 저장할 변수
-  String? enteredText; // 입력된 텍스트를 저장할 변수
+  List<String> enteredText = List<String>.filled(5, "     "); // 입력된 텍스트를 저장할 변수
   bool is5letters = false; // 5글자인지 확인하는 boolean 변수
+  int count = 0;
 
   void sendText() {
     if (_textController.text.isNotEmpty) {
       // 입력된 텍스트를 저장
       setState(() {
-        enteredText = _textController.text;
-        is5letters = enteredText != null && enteredText?.length == 5;
+        String? tmpText = _textController.text;
+        //is5letters = enteredText != null && enteredText?.length == 5;
+        is5letters = tmpText.length == 5;
+        if (is5letters) {
+          enteredText[count] = tmpText;
+          count++;
+        }
       });
     }
     _textController.clear();
@@ -51,12 +57,30 @@ class _GamePageState extends State<GamePage> {
               child: Container(
                 color: Colors.green[100],
                 child: Center(
-                  child: TextBox(
-                    text: is5letters
-                        ? enteredText!.split('')
-                        : ['', '', '', '', ''],
-                    is5letters: is5letters,
-                    answer: answerText,
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 40),
+                      TextBox(
+                        text: enteredText[0].split(''),
+                        answer: answerText,
+                      ),
+                      TextBox(
+                        text: enteredText[1].split(''),
+                        answer: answerText,
+                      ),
+                      TextBox(
+                        text: enteredText[2].split(''),
+                        answer: answerText,
+                      ),
+                      TextBox(
+                        text: enteredText[3].split(''),
+                        answer: answerText,
+                      ),
+                      TextBox(
+                        text: enteredText[4].split(''),
+                        answer: answerText,
+                      ),
+                    ],
                   ),
                 ),
               ),
