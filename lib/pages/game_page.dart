@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkodeul/components/my_text_field.dart';
+import 'package:kkodeul/models/word_model.dart';
 import 'package:kkodeul/widget/text_box.dart';
 
 class GamePage extends StatefulWidget {
@@ -11,8 +12,10 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
+  WordModel wordModel = WordModel();
+  List<dynamic>? answerText; // 정답을 저장할 변수
   String? enteredText; // 입력된 텍스트를 저장할 변수
-  bool is5letters = false;
+  bool is5letters = false; // 5글자인지 확인하는 boolean 변수
 
   void sendText() {
     if (_textController.text.isNotEmpty) {
@@ -23,6 +26,13 @@ class _GamePageState extends State<GamePage> {
       });
     }
     _textController.clear();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    answerText = wordModel.getRandomWord();
+    print(answerText);
   }
 
   @override

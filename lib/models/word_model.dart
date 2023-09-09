@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class WordModel extends ChangeNotifier {
@@ -12,8 +14,13 @@ class WordModel extends ChangeNotifier {
   //adding word
   late final String _addingword;
 
-  get wrods => _words;
+  get words => _words;
   get addingword => _addingword;
+
+  List<dynamic> getRandomWord() {
+    final int randomIndex = Random().nextInt(_words.length);
+    return _words[randomIndex];
+  }
 
   //add word to wordlist
   /*void addWord() {
