@@ -13,7 +13,7 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
   WordModel wordModel = WordModel();
-  List<dynamic>? answerText; // 정답을 저장할 변수
+  List<dynamic> answerText = []; // 정답을 저장할 변수
   String? enteredText; // 입력된 텍스트를 저장할 변수
   bool is5letters = false; // 5글자인지 확인하는 boolean 변수
 
@@ -55,6 +55,8 @@ class _GamePageState extends State<GamePage> {
                     text: is5letters
                         ? enteredText!.split('')
                         : ['', '', '', '', ''],
+                    is5letters: is5letters,
+                    answer: answerText,
                   ),
                 ),
               ),
