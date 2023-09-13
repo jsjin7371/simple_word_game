@@ -50,13 +50,14 @@ class _GamePageState extends State<GamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[100],
+      //resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Expanded(
-            child: SizedBox(
-              child: Container(
-                color: Colors.green[100],
-                child: Center(
+            child: ListView(
+              children: [
+                Center(
                   child: Column(
                     children: [
                       const SizedBox(height: 40),
@@ -97,7 +98,7 @@ class _GamePageState extends State<GamePage> {
                     ],
                   ),
                 ),
-              ),
+              ],
             ),
           ),
           _buildTextInput(),

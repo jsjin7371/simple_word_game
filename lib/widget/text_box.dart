@@ -67,10 +67,10 @@ class Tile extends StatelessWidget {
       padding: const EdgeInsets.all(2.0),
       child: Container(
         width: 60,
-        height: 65,
+        height: 60,
         decoration: BoxDecoration(
           color: hintColor,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
             width: 2,
             color: Colors.black,
