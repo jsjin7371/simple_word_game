@@ -60,22 +60,36 @@ class _GamePageState extends State<GamePage> {
                   child: Column(
                     children: [
                       const SizedBox(height: 40),
+
+                      // 첫 번째 textbox
                       TextBox(
                         text: enteredText[0].split(''),
                         answer: answerText,
                       ),
+                      const SizedBox(height: 5),
+
+                      //두 번째 textbox
                       TextBox(
                         text: enteredText[1].split(''),
                         answer: answerText,
                       ),
+                      const SizedBox(height: 5),
+
+                      //세 번째 textbox
                       TextBox(
                         text: enteredText[2].split(''),
                         answer: answerText,
                       ),
+                      const SizedBox(height: 5),
+
+                      //네 번째 textbox
                       TextBox(
                         text: enteredText[3].split(''),
                         answer: answerText,
                       ),
+                      const SizedBox(height: 5),
+
+                      //다섯 번재 textbox
                       TextBox(
                         text: enteredText[4].split(''),
                         answer: answerText,
