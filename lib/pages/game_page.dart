@@ -19,17 +19,19 @@ class _GamePageState extends State<GamePage> {
   bool is5letters = false; // 5글자인지 확인하는 boolean 변수
   int count = 0;
 
-  void startNewGame() {
-    count = 0;
-    enteredText = List.filled(5, "     ");
-    answerText = wordModel.getRandomWord();
-
+  void startNewGame(bool isCorrect, String answer) {
     Navigator.push(context, MaterialPageRoute(
       builder: (context) {
-        return const GameOverPage();
+        return GameOverPage(
+          isCorrect: isCorrect,
+          answer: answer,
+        );
       },
     ));
 
+    count = 0;
+    enteredText = List.filled(5, "     ");
+    answerText = wordModel.getRandomWord();
     print(answerText);
   }
 
@@ -52,8 +54,9 @@ class _GamePageState extends State<GamePage> {
           enteredText[count] = tmpText;
           count++;
 
-          if (count == 5 || isCorrectWord(tmpText.split(''), answerText)) {
-            startNewGame();
+          bool isCorrect = isCorrectWord(tmpText.split(''), answerText);
+          if (count == 5 || isCorrect) {
+            startNewGame(isCorrect, answerText.join());
           }
         }
       });
