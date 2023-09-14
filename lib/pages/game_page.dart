@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkodeul/components/my_text_field.dart';
 import 'package:kkodeul/models/word_model.dart';
+import 'package:kkodeul/pages/game_over_page.dart';
 import 'package:kkodeul/widget/text_box.dart';
 
 class GamePage extends StatefulWidget {
@@ -18,16 +19,42 @@ class _GamePageState extends State<GamePage> {
   bool is5letters = false; // 5글자인지 확인하는 boolean 변수
   int count = 0;
 
+  void startNewGame() {
+    count = 0;
+    enteredText = List.filled(5, "     ");
+    answerText = wordModel.getRandomWord();
+
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return const GameOverPage();
+      },
+    ));
+
+    print(answerText);
+  }
+
+  bool isCorrectWord(List<String> text, List<dynamic> answer) {
+    for (int i = 0; i < 5; i++) {
+      if (text[i] != answer[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   void sendText() {
     if (_textController.text.isNotEmpty) {
       // 입력된 텍스트를 저장
       setState(() {
         String? tmpText = _textController.text;
-        //is5letters = enteredText != null && enteredText?.length == 5;
         is5letters = tmpText.length == 5;
         if (is5letters) {
           enteredText[count] = tmpText;
           count++;
+
+          if (count == 5 || isCorrectWord(tmpText.split(''), answerText)) {
+            startNewGame();
+          }
         }
       });
     }
@@ -51,7 +78,6 @@ class _GamePageState extends State<GamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green[100],
-      //resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Expanded(
