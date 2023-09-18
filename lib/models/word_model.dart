@@ -9,6 +9,13 @@ class WordModel extends ChangeNotifier {
     ['f', 'l', 'a', 'r', 'e'], //flare
     ['p', 'i', 'x', 'e', 'l'], //pixel
     ['m', 'a', 'n', 'g', 'o'], //mango
+    ['t', 'a', 'n', 'g', 'o'], //tango
+    ['v', 'o', 'i', 'c', 'e'], //voice
+    ['j', 'u', 'm', 'b', 'o'], //jumbo
+    ['d', 'r', 'e', 'a', 'm'], //dream
+    ['r', 'o', 'a', 's', 't'], //roast
+    ['d', 'i', 's', 'c', 'o'], //disco
+    ['l', 'u', 'n', 'a', 'r'], //lunar
   ];
 
   //adding word
