@@ -59,7 +59,7 @@ class GameOverPage extends StatelessWidget {
                   color: Colors.red[400],
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 28),
 
               //이전 페이지로 이동
               GestureDetector(
@@ -67,7 +67,7 @@ class GameOverPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.green[300],
+                    color: Colors.green[400],
                   ),
                   child: const Padding(
                     padding: EdgeInsets.only(
@@ -86,52 +86,69 @@ class GameOverPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 42),
 
               //스탯 보여주기
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Times you try',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Row(
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[300],
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
                         children: [
-                          Icon(Icons.loop),
-                          SizedBox(width: 5),
                           Text(
-                            '1',
+                            'Times you try',
                             style: TextStyle(fontSize: 20),
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.loop),
+                              SizedBox(width: 5),
+                              Text(
+                                '1',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                  SizedBox(width: 20),
-                  Column(
-                    children: [
-                      Text(
-                        'Correct answer',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Row(
+                  const SizedBox(width: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[300],
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
                         children: [
-                          Icon(Icons.flag),
-                          SizedBox(width: 5),
                           Text(
-                            '1',
+                            'Correct answer',
                             style: TextStyle(fontSize: 20),
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.flag),
+                              SizedBox(width: 5),
+                              Text(
+                                '1',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
             ],
           ),
         ),
