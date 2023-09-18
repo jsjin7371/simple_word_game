@@ -22,8 +22,8 @@ class GameOverPage extends StatelessWidget {
 
               //성공 실패 보여주는 이미지
               isCorrect
-                  ? const Icon(Icons.brightness_1_outlined)
-                  : const Icon(Icons.no_adult_content_outlined),
+                  ? Image.asset('lib/icons/wired-outline-1103-confetti.gif')
+                  : Image.asset('lib/icons/wired-outline-1122-thumb-down.gif'),
               const SizedBox(height: 40),
 
               //성공 실패 보여주는 텍스트
