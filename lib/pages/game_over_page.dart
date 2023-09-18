@@ -28,15 +28,38 @@ class GameOverPage extends StatelessWidget {
 
               //성공 실패 보여주는 텍스트
               isCorrect
-                  ? const Text("정답~")
-                  : const Text("Do you have a brain?"),
+                  ? Text(
+                      "Congratulation!",
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.blue[400],
+                      ),
+                    )
+                  : Text(
+                      "Try Next Time",
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.red[400],
+                      ),
+                    ),
               const SizedBox(height: 40),
 
               //정답 보여주기
-              Text("ans : $answer"),
+              const Text(
+                "the answer was",
+                style: TextStyle(
+                  fontSize: 28,
+                ),
+              ),
+              Text(
+                answer,
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red[400],
+                ),
+              ),
               const SizedBox(height: 40),
-
-              //스탯 보여주기
 
               //이전 페이지로 이동
               GestureDetector(
@@ -44,25 +67,71 @@ class GameOverPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.green[400],
+                    color: Colors.green[300],
                   ),
                   child: const Padding(
                     padding: EdgeInsets.only(
                       left: 17,
                       right: 17,
-                      top: 5,
-                      bottom: 6,
+                      top: 10,
+                      bottom: 10,
                     ),
                     child: Text(
-                      '다시하기',
+                      'Try Again',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 20),
+
+              //스탯 보여주기
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Times you try',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.loop),
+                          SizedBox(width: 5),
+                          Text(
+                            '1',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 20),
+                  Column(
+                    children: [
+                      Text(
+                        'Correct answer',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.flag),
+                          SizedBox(width: 5),
+                          Text(
+                            '1',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
