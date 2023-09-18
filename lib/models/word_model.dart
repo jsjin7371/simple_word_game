@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class WordModel extends ChangeNotifier {
   //list of word
   final List _words = [
+    ['b', 'i', 'n', 'g', 'o'], //bingo
     ['q', 'u', 'e', 's', 't'], //quest
     ['f', 'l', 'a', 'r', 'e'], //flare
     ['c', 'r', 'a', 'z', 'y'], //crazy
@@ -15,8 +16,8 @@ class WordModel extends ChangeNotifier {
     ['v', 'o', 'i', 'c', 'e'], //voice
     ['j', 'u', 'm', 'b', 'o'], //jumbo
     ['d', 'r', 'e', 'a', 'm'], //dream
-    ['r', 'o', 'a', 's', 't'], //roast
     ['d', 'i', 's', 'c', 'o'], //disco
+    ['r', 'o', 'a', 's', 't'], //roast
     ['l', 'u', 'n', 'a', 'r'], //lunar
     ['l', 'o', 's', 'e', 'r'], //loser
     ['w', 'i', 'n', 'e', 'r'], //winer
