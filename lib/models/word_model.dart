@@ -7,8 +7,10 @@ class WordModel extends ChangeNotifier {
   final List _words = [
     ['q', 'u', 'e', 's', 't'], //quest
     ['f', 'l', 'a', 'r', 'e'], //flare
+    ['c', 'r', 'a', 'z', 'y'], //crazy
     ['p', 'i', 'x', 'e', 'l'], //pixel
     ['m', 'a', 'n', 'g', 'o'], //mango
+    ['m', 'e', 'd', 'a', 'l'], //medal
     ['t', 'a', 'n', 'g', 'o'], //tango
     ['v', 'o', 'i', 'c', 'e'], //voice
     ['j', 'u', 'm', 'b', 'o'], //jumbo
@@ -16,6 +18,8 @@ class WordModel extends ChangeNotifier {
     ['r', 'o', 'a', 's', 't'], //roast
     ['d', 'i', 's', 'c', 'o'], //disco
     ['l', 'u', 'n', 'a', 'r'], //lunar
+    ['l', 'o', 's', 'e', 'r'], //loser
+    ['w', 'i', 'n', 'e', 'r'], //winer
   ];
 
   //adding word
