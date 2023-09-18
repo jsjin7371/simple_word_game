@@ -144,7 +144,7 @@ class _GamePageState extends State<GamePage> {
           Expanded(
             child: MyTextField(
               controller: _textController,
-              hintText: 'Enter your answer',
+              hintText: 'Enter 5 letters word',
               obscureText: false,
             ),
           ),
