@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:kkodeul/models/uesr_data_model.dart';
 
 class GameOverPage extends StatelessWidget {
   const GameOverPage({
     super.key,
     required this.isCorrect,
     required this.answer,
+    required this.userDataModel,
   });
 
   final bool isCorrect;
   final String answer;
+  final UserDataModel userDataModel;
 
   @override
   Widget build(BuildContext context) {
@@ -97,21 +100,21 @@ class GameOverPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       color: Colors.grey[300],
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             'Times you try',
                             style: TextStyle(fontSize: 20),
                           ),
                           Row(
                             children: [
-                              Icon(Icons.loop),
-                              SizedBox(width: 5),
+                              const Icon(Icons.loop),
+                              const SizedBox(width: 5),
                               Text(
-                                '1',
-                                style: TextStyle(fontSize: 20),
+                                '${userDataModel.timesofTry}',
+                                style: const TextStyle(fontSize: 20),
                               ),
                             ],
                           ),
@@ -125,21 +128,21 @@ class GameOverPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       color: Colors.grey[300],
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             'Correct answer',
                             style: TextStyle(fontSize: 20),
                           ),
                           Row(
                             children: [
-                              Icon(Icons.flag),
-                              SizedBox(width: 5),
+                              const Icon(Icons.flag),
+                              const SizedBox(width: 5),
                               Text(
-                                '1',
-                                style: TextStyle(fontSize: 20),
+                                '${userDataModel.timesofAnswer}',
+                                style: const TextStyle(fontSize: 20),
                               ),
                             ],
                           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkodeul/components/my_text_field.dart';
+import 'package:kkodeul/models/uesr_data_model.dart';
 import 'package:kkodeul/models/word_model.dart';
 import 'package:kkodeul/pages/game_over_page.dart';
 import 'package:kkodeul/widget/text_box.dart';
@@ -14,6 +15,7 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
   WordModel wordModel = WordModel();
+  UserDataModel userDataModel = UserDataModel();
 
   // 소문자 알파벳을 담은 리스트
   List<String> alphabets = List.generate(26, (index) {
@@ -32,6 +34,7 @@ class _GamePageState extends State<GamePage> {
         return GameOverPage(
           isCorrect: isCorrect,
           answer: answer,
+          userDataModel: userDataModel,
         );
       },
     ));
@@ -68,14 +71,18 @@ class _GamePageState extends State<GamePage> {
       setState(() {
         String? tmpText = _textController.text;
         is5letters = tmpText.length == 5;
+
+        //5글자 단어 입력시
         if (is5letters) {
           enteredText[count] = tmpText;
           count++;
+          userDataModel.addCountofTry();
 
           deleteUsedAlphabet(tmpText.split(''));
 
           bool isCorrect = isCorrectWord(tmpText.split(''), answerText);
           if (count == 5 || isCorrect) {
+            userDataModel.addCountofAnwser();
             startNewGame(isCorrect, answerText.join());
           }
         }

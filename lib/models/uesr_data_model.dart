@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class WordModel extends ChangeNotifier {
+class UserDataModel extends ChangeNotifier {
   int timesofTry = 0;
   int timesofAnswer = 0;
 
