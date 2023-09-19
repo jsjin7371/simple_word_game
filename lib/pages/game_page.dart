@@ -14,6 +14,13 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   final TextEditingController _textController = TextEditingController();
   WordModel wordModel = WordModel();
+
+  // 소문자 알파벳을 담은 리스트
+  List<String> alphabets = List.generate(26, (index) {
+    int asciiValue = 'a'.codeUnitAt(0) + index;
+    return String.fromCharCode(asciiValue);
+  });
+
   List<dynamic> answerText = []; // 정답을 저장할 변수
   List<String> enteredText = List<String>.filled(5, "     "); // 입력된 텍스트를 저장할 변수
   bool is5letters = false; // 5글자인지 확인하는 boolean 변수
@@ -32,6 +39,10 @@ class _GamePageState extends State<GamePage> {
     count = 0;
     enteredText = List.filled(5, "     ");
     answerText = wordModel.getRandomWord();
+    alphabets = List.generate(26, (index) {
+      int asciiValue = 'a'.codeUnitAt(0) + index;
+      return String.fromCharCode(asciiValue);
+    });
     print(answerText);
   }
 
@@ -44,6 +55,13 @@ class _GamePageState extends State<GamePage> {
     return true;
   }
 
+  void deleteUsedAlphabet(List<String> text) {
+    for (int i = 0; i < 5; i++) {
+      alphabets.remove(text[i]);
+    }
+    return;
+  }
+
   void sendText() {
     if (_textController.text.isNotEmpty) {
       // 입력된 텍스트를 저장
@@ -53,6 +71,8 @@ class _GamePageState extends State<GamePage> {
         if (is5letters) {
           enteredText[count] = tmpText;
           count++;
+
+          deleteUsedAlphabet(tmpText.split(''));
 
           bool isCorrect = isCorrectWord(tmpText.split(''), answerText);
           if (count == 5 || isCorrect) {
@@ -124,6 +144,34 @@ class _GamePageState extends State<GamePage> {
                         text: enteredText[4].split(''),
                         answer: answerText,
                       ),
+
+                      const SizedBox(height: 10),
+
+                      //사용하지 않은 알파벳 표시
+                      Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                const Text(
+                                  'Alphabet that didn\'t used',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 217, 75, 9)),
+                                ),
+                                const SizedBox(height: 7),
+                                Text(
+                                  alphabets.join(' '),
+                                  style: const TextStyle(fontSize: 22),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          )),
                     ],
                   ),
                 ),
