@@ -149,29 +149,30 @@ class _GamePageState extends State<GamePage> {
 
                       //사용하지 않은 알파벳 표시
                       Container(
-                          width: 350,
-                          decoration: BoxDecoration(
-                              color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                const Text(
-                                  'Alphabet that didn\'t used',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Color.fromARGB(255, 217, 75, 9)),
-                                ),
-                                const SizedBox(height: 7),
-                                Text(
-                                  alphabets.join(' '),
-                                  style: const TextStyle(fontSize: 22),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                          )),
+                        width: 350,
+                        decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              const Text(
+                                'Alphabet that didn\'t used',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color.fromARGB(255, 217, 75, 9)),
+                              ),
+                              const SizedBox(height: 7),
+                              Text(
+                                alphabets.join(' '),
+                                style: const TextStyle(fontSize: 22),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
