@@ -21,14 +21,14 @@ class IntroPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(10),
             child: Text(
-              '꼬들',
+              'Simple Word Game',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
-              '간단하고 재미있는 퀴즈를 즐겨보세요!',
+              'Play Simple and Fun Quize!',
               style: TextStyle(fontSize: 17),
             ),
           ),
@@ -55,7 +55,7 @@ class IntroPage extends StatelessWidget {
                   bottom: 6,
                 ),
                 child: Text(
-                  '시작하기',
+                  'Start',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
