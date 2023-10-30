@@ -39,6 +39,7 @@ class _GamePageState extends State<GamePage> {
       },
     ));
 
+    //정답 초기화
     count = 0;
     enteredText = List.filled(5, "     ");
     answerText = wordModel.getRandomWord();
