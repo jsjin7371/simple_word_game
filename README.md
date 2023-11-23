@@ -63,6 +63,15 @@ Displays the correct answer, number of attempts, and number of correct answers.
 </br>
 `addCountofAnwser()` 함수로 정답을 맞춘 횟수를 1회 증가시킬 수 있습니다.
 </br>
+</br>
+The user data model contains variables that store the number of attempts and the number of correct answers.
+</br>
+You can initialize the above variables with the `initUserData()` function.
+</br>
+You can increase the number of attempts by 1 with the `addCountofTry()` function.
+</br>
+You can increase the number of correct answers by one with the `addCountofAnwser()` function.
+</br>
 
 ### word_model
 `List _word` 에는 정답들을 알파벳 한 개씩 저장하는 리스트입니다.
