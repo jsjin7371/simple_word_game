@@ -76,8 +76,13 @@ You can increase the number of correct answers by one with the `addCountofAnwser
 ### word_model
 `List _word` 에는 정답들을 알파벳 한 개씩 저장하는 리스트입니다.
 </br>
-`getRandomWoird()`를 통해 랜덤하게 _word 리스트에 존재하는 단어 하나를 반환합니다.
-
+`getRandomWord()`를 통해 랜덤하게 _word 리스트에 존재하는 단어 하나를 반환합니다.
+</br>
+</br>
+`List _word` is a list that stores the correct answers alphabetically.
+</br>
+`getRandomWord()` randomly returns one word that exists in the _word list.
+</br>
 
 
 
