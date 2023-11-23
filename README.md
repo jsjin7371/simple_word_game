@@ -1,5 +1,9 @@
 # Simple Word Game
 
+Flutter 기반의 프로그램입니다.
+</br>
+It is a Flutter based program.
+
 > 꼬들이라는 게임에서 영감을 받았습니다.</br>inspired by kordle : https://kordle.kr/
 </br>
 5 글자로 이루어진 단어를 유추하는 게임입니다.
@@ -55,11 +59,15 @@ Displays the correct answer, number of attempts, and number of correct answers.
 </br>
 `initUserData()` 함수로 위의 변수들을 초기화 할 수 있습니다.
 </br>
-`addCountofTry()` 함수
-
+`addCountofTry()` 함수로 시도횟수를 1회 증가시킬 수 있습니다.
+</br>
+`addCountofAnwser()` 함수로 정답을 맞춘 횟수를 1회 증가시킬 수 있습니다.
+</br>
 
 ### word_model
-
+`List _word` 에는 정답들을 알파벳 한 개씩 저장하는 리스트입니다.
+</br>
+`getRandomWoird()`를 통해 랜덤하게 _word 리스트에 존재하는 단어 하나를 반환합니다.
 
 
 
