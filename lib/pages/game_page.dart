@@ -83,7 +83,9 @@ class _GamePageState extends State<GamePage> {
 
           bool isCorrect = isCorrectWord(tmpText.split(''), answerText);
           if (count == 5 || isCorrect) {
-            userDataModel.addCountofAnwser();
+            if (isCorrect) {
+              userDataModel.addCountofAnwser();
+            }
             startNewGame(isCorrect, answerText.join());
           }
         }
