@@ -23,8 +23,7 @@ You can simply run it locally only.
 </br>
 
 ## 시작화면(intro page)
-
-<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/8d3724ad-0942-4192-9783-028dfd4f1355" width="200">
+<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/8d1391c7-11ef-47b1-8271-b5bb5f3ba914" width="200">
 </br>
 시작 버튼을 누르면 다음 페이지로 이동합니다.
 </br>
@@ -32,7 +31,7 @@ If you press start button, it goes next page.
 </br>
 
 ## 게임 설명 화면(explain page)
-<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/a90b4a25-f993-4a00-a78b-8e5fc148a393" width="200">
+<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/f05f71fc-1d5f-4ef4-acb0-3cb1308beb67" width="200">
 </br>
 게임에 대한 간단한 설명입니다.
 </br>
@@ -40,13 +39,11 @@ Description of the game.
 </br>
 
 ## 게임 화면(game page)
-<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/4ef77b83-64ce-427d-9873-39b417c3c970" width="200">
-
-
+<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/40f8e9ef-3423-42a8-8566-ca1cc55b2040" width="200">
 </br>
 
 ## 게임 종료 화면(game over page)
-<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/fa1c7866-d9a6-4904-8843-ab2f65f7caaa" width="200">
+<img src="https://github.com/jsjin7371/simple_word_game/assets/120244130/2210d16b-a2c5-4798-82c1-79dbfe0d889c" width="200">
 </br>
 정답 및 시도횟수와 정답을 맞춘 횟수를 표시합니다.
 </br>
